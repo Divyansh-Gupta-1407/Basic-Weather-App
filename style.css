@@ -1,0 +1,192 @@
+/* ------------------------------------------------------
+   Weather Dashboard — stylesheet
+   Palette:
+   #F7F9FC  background (soft sky-grey)
+   #FFFFFF  card surface
+   #2B2F3A  ink / primary text
+   #6B7280  muted text
+   #FF9F5B  temperature accent (warm)
+   #4DA8FF  humidity accent (blue)
+   #34C0A6  wind accent (teal)
+   #9B7BE0  description accent (violet)
+------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+    background: linear-gradient(160deg, #EAF2FB 0%, #F7F9FC 45%, #FDF3EC 100%);
+    font-family: 'Inter', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+    color: #2B2F3A;
+}
+
+.container {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+.weather-card {
+    width: 100%;
+    max-width: 440px;
+    background: #FFFFFF;
+    border-radius: 28px;
+    padding: 40px 36px;
+    box-shadow: 0 20px 45px rgba(43, 47, 58, 0.08), 0 2px 8px rgba(43, 47, 58, 0.04);
+}
+
+.weather-card h1 {
+    margin: 0 0 28px;
+    font-family: 'Quicksand', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-align: center;
+    letter-spacing: 0.2px;
+}
+
+/* Search */
+.search-container {
+    display: flex;
+    gap: 10px;
+}
+
+#cityInput {
+    flex: 1;
+    padding: 13px 16px;
+    border: 1.5px solid #E3E8EF;
+    border-radius: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #2B2F3A;
+    background: #F7F9FC;
+    outline: none;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+#cityInput::placeholder {
+    color: #9AA3B2;
+}
+
+#cityInput:focus {
+    border-color: #4DA8FF;
+    background: #FFFFFF;
+}
+
+#searchButton {
+    padding: 13px 22px;
+    border: none;
+    border-radius: 14px;
+    background: #2B2F3A;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease;
+}
+
+#searchButton:hover {
+    background: #454B5C;
+}
+
+#searchButton:active {
+    transform: scale(0.97);
+}
+
+/* Divider */
+.divider {
+    height: 1px;
+    background: #EDF0F5;
+    margin: 32px 0 28px;
+}
+
+/* Weather info */
+.weather-info h2 {
+    grid-column: 1 / -1;
+    margin: 0 0 8px;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #2B2F3A;
+}
+
+.weather-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.info-box {
+    background: #F7F9FC;
+    border-radius: 18px;
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-left: 4px solid transparent;
+}
+
+.info-box span {
+    font-family: 'Inter', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #6B7280;
+}
+
+.info-box p {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: #2B2F3A;
+}
+
+/* Color-code each metric so the grid reads at a glance */
+.info-box:nth-child(1) {
+    border-left-color: #FF9F5B;
+}
+
+.info-box:nth-child(2) {
+    border-left-color: #4DA8FF;
+}
+
+.info-box:nth-child(3) {
+    border-left-color: #34C0A6;
+}
+
+.info-box:nth-child(4) {
+    border-left-color: #9B7BE0;
+}
+
+/* Responsive */
+@media (max-width: 420px) {
+    .weather-card {
+        padding: 30px 22px;
+        border-radius: 22px;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+
+    #searchButton {
+        width: 100%;
+    }
+}
+
+/* Accessibility: visible keyboard focus */
+#searchButton:focus-visible,
+#cityInput:focus-visible {
+    outline: 2px solid #4DA8FF;
+    outline-offset: 2px;
+}
