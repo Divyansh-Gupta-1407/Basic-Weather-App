@@ -20,11 +20,7 @@ A simple and responsive weather application built using **HTML**, **CSS**, and *
 
 ### Weather Result
 
-```md
-![Weather Result]
 <img width="959" height="599" alt="image" src="https://github.com/user-attachments/assets/44e68887-d929-46da-954d-c2a81cbda0f9" />
-
-```
 
 ---
 
