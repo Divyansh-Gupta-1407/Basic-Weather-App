@@ -14,7 +14,7 @@ function getWeather() {
         return;
     }
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=1a1e6bc25370c84f9d9a7eb2376635d0&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=xxxx&units=metric`;
 
     fetch(url)
         .then(response => response.json())
